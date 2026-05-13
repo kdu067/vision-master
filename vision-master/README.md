@@ -1,4 +1,4 @@
-# 🌾 AgroVision AI - Documentação Completa
+# 🌾 vision AI - Documentação Completa
 
 Monitoramento e análise operacional com visão computacional e IA generativa local.
 
@@ -52,7 +52,7 @@ agrovision_ia/
 │   ├── schemas.py           # Modelos Pydantic
 │   ├── event_repository.py  # SQLite para eventos
 │   ├── ollama_client.py     # Cliente Ollama
-│   ├── monitoring_agent.py  # Agente AgroVision
+│   ├── monitoring_agent.py  # Agente vision
 │   └── video_monitor.py     # Monitor YOLO
 ├── templates/
 │   └── index.html           # Dashboard HTML
@@ -103,7 +103,7 @@ AGENT_EVENT_LIMIT=12
    - Guarda caminho das imagens capturadas
    - Histórico consultável
 
-### 4. **Agente AgroVision**
+### 4. **Agente vision**
    - Interpreta eventos recentes
    - Analisa padrões
    - Explica riscos operacionais
@@ -218,4 +218,4 @@ Referência completa: Ver arquivos PDF da documentação anexados.
 
 ---
 
-**AgroVision AI v1.0** | Desenvolvido para fins didáticos em Engenharia de Software
+**vision AI v1.0** | Desenvolvido para fins didáticos em Engenharia de Software
