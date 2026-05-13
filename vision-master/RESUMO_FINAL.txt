@@ -1,0 +1,325 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                ║
+║                       🌾 AGROVISION AI - COMPLETO 🌾                          ║
+║                    Monitoramento com IA Local em Produção                      ║
+║                                                                                ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+📦 ESTRUTURA DO PROJETO
+════════════════════════════════════════════════════════════════════════════════
+
+agrovision_ia/
+│
+├── 📄 ARQUIVOS PRINCIPAIS
+│   ├── app.py                          FastAPI + rotas REST
+│   ├── requirements.txt                Dependências Python
+│   ├── .env                           Configuração local
+│   └── .gitignore                     Exclusão Git
+│
+├── 🔧 SERVIÇOS (services/)
+│   ├── config.py                      Configurações centralizadas
+│   ├── schemas.py                     Modelos Pydantic
+│   ├── event_repository.py            Persistência SQLite
+│   ├── ollama_client.py               Cliente LLM
+│   ├── monitoring_agent.py            Agente operacional
+│   └── video_monitor.py               Monitor YOLO
+│
+├── 🎨 INTERFACE (templates/ + static/)
+│   ├── templates/index.html           Dashboard HTML/Jinja2
+│   ├── static/dashboard.css           Estilos responsivos
+│   ├── static/dashboard.js            Chat em tempo real
+│   └── static/captures/               Imagens detectadas
+│
+├── 📚 DOCUMENTAÇÃO
+│   ├── README.md                      Guia principal
+│   ├── GUIA_AVANCADO.md              Customização e extensão
+│   ├── TROUBLESHOOTING.md            Solução de problemas
+│   ├── DEPLOYMENT.md                  Produção com Docker
+│   └── CONTRIBUTING.md                Como contribuir
+│
+├── 🐳 DOCKER & PRODUÇÃO
+│   ├── Dockerfile                     Container FastAPI
+│   ├── docker-compose.yml             Orquestração multi-container
+│   └── nginx.conf                     Proxy reverso produção
+│
+├── 🧪 TESTES
+│   ├── test_services.py               Testes unitários/integração
+│   └── pytest.ini                     Configuração pytest
+│
+└── 🚀 SCRIPTS
+    ├── run.bat                        Inicialização Windows (batch)
+    └── run.ps1                        Inicialização Windows (PowerShell)
+
+
+🎯 RECURSOS IMPLEMENTADOS
+════════════════════════════════════════════════════════════════════════════════
+
+✅ VISÃO COMPUTACIONAL
+   ├─ YOLO11 nano para detecção em tempo real
+   ├─ Suporte para 5+ classes (person, car, truck, bus, motorcycle)
+   ├─ Captura e persistência de frames
+   └─ Streaming MJPEG ao vivo para dashboard
+
+✅ INTELIGÊNCIA ARTIFICIAL LOCAL
+   ├─ Ollama com llama3 (ou outro modelo)
+   ├─ Processamento local sem API externa
+   ├─ Modelo carregável sob demanda
+   └─ Streaming de respostas em tempo real
+
+✅ AGENTE OPERACIONAL
+   ├─ Identidade, papel e objetivo definidos
+   ├─ Contexto operacional inteligente
+   ├─ Memória curta da conversa
+   ├─ Análise de riscos
+   └─ Recomendações acionáveis
+
+✅ PERSISTÊNCIA DE DADOS
+   ├─ SQLite para eventos
+   ├─ Histórico com timestamp
+   ├─ Consultas rápidas
+   └─ Pronto para migração PostgreSQL
+
+✅ API REST COMPLETA
+   ├─ Health check
+   ├─ Status da câmera
+   ├─ Lista de eventos
+   ├─ Status do agente
+   ├─ Chat com streaming
+   └─ Frame atual/stream ao vivo
+
+✅ DASHBOARD WEB
+   ├─ Interface responsiva
+   ├─ Chat em tempo real
+   ├─ Feed de câmera ao vivo
+   ├─ Lista de eventos recentes
+   ├─ Status do sistema
+   └─ Design moderno e acessível
+
+✅ SEGURANÇA E DEPLOYMENT
+   ├─ Docker Compose para orquestração
+   ├─ Nginx como proxy reverso
+   ├─ HTTPS/SSL com Let's Encrypt
+   ├─ Rate limiting
+   ├─ Compressão Gzip
+   └─ Headers de segurança
+
+✅ TESTES E QUALIDADE
+   ├─ Testes unitários
+   ├─ Testes de integração
+   ├─ Fixtures e mocks
+   └─ Cobertura completa
+
+✅ DOCUMENTAÇÃO PROFISSIONAL
+   ├─ README com quick start
+   ├─ Guia avançado com 7 tópicos
+   ├─ Troubleshooting com 20+ problemas
+   ├─ Guia deployment em produção
+   └─ CONTRIBUTING para comunidade
+
+
+🚀 COMO USAR AGORA
+════════════════════════════════════════════════════════════════════════════════
+
+1️⃣ EXTRAÇÃO E PREPARAÇÃO
+   $ unzip agrovision_ia.zip
+   $ cd agrovision_ia
+   $ python -m venv .venv
+   $ .\.venv\Scripts\Activate.ps1  (Windows)
+   $ pip install -r requirements.txt
+
+2️⃣ INSTALAR OLLAMA (em outro terminal)
+   $ ollama pull llama3
+   $ ollama serve
+
+3️⃣ RODAR O PROJETO (no primeiro terminal)
+   $ python -m uvicorn app:app --reload
+   $ Abrir http://127.0.0.1:8000
+
+4️⃣ USAR NO PAINEL
+   ├─ Ver câmera ao vivo
+   ├─ Conferir eventos detectados
+   ├─ Conversar com agente
+   └─ Fazer perguntas sobre monitoramento
+
+
+📊 ESTATÍSTICAS DO PROJETO
+════════════════════════════════════════════════════════════════════════════════
+
+Linhas de Código:
+  ├─ Python (app + services): ~1500 linhas
+  ├─ HTML/CSS/JS (interface): ~800 linhas
+  └─ Documentação: ~4000 linhas
+  └─ TOTAL: ~6300 linhas
+
+Arquivos Principais: 30
+Tamanho ZIP: ~40 KB (comprimido)
+Tamanho Descompactado: ~250 KB (sem venv/dados)
+
+Dependências Python: 8
+  ├─ FastAPI
+  ├─ Uvicorn
+  ├─ OpenCV
+  ├─ Ultralytics (YOLO)
+  ├─ Jinja2
+  ├─ python-dotenv
+  ├─ requests
+  └─ python-multipart
+
+Modelos Necessários:
+  ├─ YOLO: yolo11n.pt (~11 MB)
+  └─ Ollama: llama3 (~4 GB)
+
+
+🔄 FLUXO DE DADOS
+════════════════════════════════════════════════════════════════════════════════
+
+  📹 Câmera             OpenCV              YOLO             SQLite
+   │                     │                  │                 │
+   ├─ frame stream ─► read frames ──► detecta objetos ──► salva evento
+   │                                    ↓
+   │                            label + confiança
+   │                                    ↓
+   └─────────────────► MJPEG stream ──────┬───────────► Dashboard
+                                          │
+                      Agente (Python)     │
+                            ↑             │
+                            └─ contexto ──┴─► Ollama → resposta texto
+                                             (LLM local)
+
+
+⚙️ CUSTOMIZAÇÕES SIMPLES
+════════════════════════════════════════════════════════════════════════════════
+
+Trocar Câmera:
+  .env → CAMERA_SOURCE=https://nova-camera.com/stream
+
+Trocar Modelo YOLO:
+  services/video_monitor.py → YOLO("yolo11m.pt")
+
+Trocar Modelo Ollama:
+  .env → OLLAMA_MODEL=mistral
+
+Customizar Agente:
+  services/monitoring_agent.py → AGENT_PROFILE = ...
+
+Adicionar Classe de Detecção:
+  services/config.py → TARGET_CLASSES = [...]
+
+
+🎓 APRENDIZADO
+════════════════════════════════════════════════════════════════════════════════
+
+Este projeto ensina:
+
+1. 🎯 VISÃO COMPUTACIONAL
+   └─ Como YOLO funciona, preprocessamento, postprocessamento
+
+2. 🔌 BACKEND E APIs
+   └─ FastAPI, rotas HTTP, streaming, WebSocket concepts
+
+3. 📊 PERSISTÊNCIA
+   └─ SQLite, schema design, queries otimizadas
+
+4. 🤖 AGENTES COM IA
+   └─ Prompt engineering, contexto, orchestração de modelos
+
+5. 🎨 FRONTEND
+   └─ HTML/CSS/JS, consumo de APIs, event streams
+
+6. 🐳 DEVOPS
+   └─ Docker, Docker Compose, Nginx, CI/CD basics
+
+7. ✅ TESTES
+   └─ pytest, fixtures, mocks, cobertura
+
+8. 📚 DOCUMENTAÇÃO
+   └─ Como documentar código profissional
+
+
+🔐 SEGURANÇA
+════════════════════════════════════════════════════════════════════════════════
+
+Incluído:
+  ✅ Rate limiting (Nginx)
+  ✅ HTTPS/SSL (Let's Encrypt ready)
+  ✅ CORS headers
+  ✅ Content Security Policy
+  ✅ Proteção contra ataques comuns
+  ✅ .gitignore para credentials
+  ✅ Suporte a variáveis de ambiente
+
+Documentado:
+  ✅ Boas práticas de segurança
+  ✅ Configuração SSL passo-a-passo
+  ✅ Deployment seguro em produção
+
+
+📈 PRONTO PARA PRODUÇÃO
+════════════════════════════════════════════════════════════════════════════════
+
+  ✅ Docker Compose multi-container
+  ✅ Nginx como proxy reverso
+  ✅ Health checks automatizados
+  ✅ Logging estruturado
+  ✅ Backup e recovery
+  ✅ Monitoramento de recursos
+  ✅ Rate limiting e throttling
+  ✅ Load balancing ready
+  ✅ SSL/TLS configurável
+  ✅ CI/CD pipeline example
+
+
+🎁 BÔNUS
+════════════════════════════════════════════════════════════════════════════════
+
+Incluído no ZIP:
+  📄 Dockerfile          Container pronto
+  🐳 docker-compose.yml  Stack com Ollama
+  📋 nginx.conf          Proxy de produção
+  🧪 test_services.py    Suite de testes
+  📚 4 documentações completas
+  🚀 2 scripts de inicialização
+  🔄 .gitignore profissional
+
+
+🎯 PRÓXIMAS ETAPAS
+════════════════════════════════════════════════════════════════════════════════
+
+Fácil (1-2 horas):
+  □ Mudar para câmera IP real
+  □ Treinar YOLO com seu dataset
+  □ Customizar prompt do agente
+  □ Adicionar webhook Slack
+
+Médio (4-8 horas):
+  □ Deploy em Docker
+  □ Configurar SSL/HTTPS
+  □ Adicionar autenticação
+  □ Integrar com banco PostgreSQL
+
+Avançado (1-2 semanas):
+  □ Treinar modelo YOLO customizado
+  □ Implementar múltiplas câmeras
+  □ Adicionar alertas automáticos
+  □ Criar dashboard avançado com Grafana
+
+
+📞 SUPORTE
+════════════════════════════════════════════════════════════════════════════════
+
+  Dúvidas? Consulte:
+    ├─ README.md (quick start)
+    ├─ GUIA_AVANCADO.md (customizações)
+    ├─ TROUBLESHOOTING.md (problemas)
+    ├─ DEPLOYMENT.md (produção)
+    └─ CONTRIBUTING.md (desenvolvimento)
+
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                ║
+║                    ✨ Seu AgroVision AI está Pronto! ✨                       ║
+║                                                                                ║
+║        Extraia o ZIP, rode os scripts, e comece a monitorar com IA!          ║
+║                                                                                ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+

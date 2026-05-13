@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroVision AI - Dashboard</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌾 AgroVision AI</h1>
+            <p>Monitoramento e Análise Operacional com IA</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Seção de Câmera -->
+            <section class="card camera-section">
+                <h2>📹 Câmera ao Vivo</h2>
+                <div id="camera-status" class="status"></div>
+                <img id="camera-feed" src="/video_feed" alt="Feed da câmera" style="width: 100%; max-height: 400px; border-radius: 8px;">
+            </section>
+
+            <!-- Seção de Eventos -->
+            <section class="card events-section">
+                <h2>📊 Eventos Recentes</h2>
+                <div id="events-list" class="events-list">
+                    <p>Carregando eventos...</p>
+                </div>
+            </section>
+
+            <!-- Seção do Agente -->
+            <section class="card agent-section">
+                <h2>🤖 Agente AgroVision</h2>
+                <div id="agent-status" class="agent-status">
+                    <p>Carregando status...</p>
+                </div>
+
+                <div class="chat-container">
+                    <div id="chat-messages" class="chat-messages">
+                        <div class="message agent">
+                            <strong>Agente:</strong> Olá! Sou o Agente AgroVision. Faça uma pergunta sobre os eventos detectados.
+                        </div>
+                    </div>
+
+                    <form id="chat-form" class="chat-form">
+                        <textarea id="question-input" placeholder="Digite sua pergunta aqui..." rows="2"></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>AgroVision AI v1.0 | Monitoramento em Tempo Real com YOLO e Ollama</p>
+        </footer>
+    </div>
+
+    <script src="/static/dashboard.js"></script>
+</body>
+</html>
